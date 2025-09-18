@@ -17,3 +17,7 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/MeraNavaneetha/smart-study-planner.git
+
+
+Check out the live web app here:  
+[Smart Study Planner Live](https://MeraNavaneetha.github.io/smart-study-planner/)
