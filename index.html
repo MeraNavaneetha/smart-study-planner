@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">SS</div>
+      <div>
+        <h1>Smart Study Planner</h1>
+        <p class="lead">Organize your study tasks — add, edit, mark done & filter. Data saved locally.</p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="left">
+        <div class="card">
+          <form id="taskForm">
+            <div style="display:flex; gap:8px; margin-bottom:8px;">
+              <input id="title" placeholder="Task title (e.g., Read Chapter 3)" required />
+              <input id="subject" placeholder="Subject (Math, ECE...)" />
+            </div>
+
+            <div class="row">
+              <input id="date" type="date" />
+              <input id="time" type="time" />
+              <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div class="controls">
+              <button id="saveBtn" class="btn" type="submit">Add Task</button>
+              <button id="clearBtn" class="btn" type="button">Clear</button>
+              <input id="search" placeholder="Search tasks..." style="flex:1" />
+            </div>
+          </form>
+
+          <div id="tasks" class="tasks" aria-live="polite"></div>
+        </div>
+
+        <footer>Tip: Use the search box to quickly find tasks. Your tasks are stored in your browser.</footer>
+      </section>
+
+      <aside class="right">
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>Filters</strong>
+            <small id="count" style="color:var(--muted)">0 tasks</small>
+          </div>
+          <div class="filters" style="margin-top:8px">
+            <div class="chip active" data-filter="all">All</div>
+            <div class="chip" data-filter="today">Today</div>
+            <div class="chip" data-filter="pending">Pending</div>
+            <div class="chip" data-filter="completed">Completed</div>
+          </div>
+
+          <hr style="border:none;height:1px;background:rgba(255,255,255,0.03); margin:8px 0" />
+
+          <div>
+            <strong>Quick actions</strong>
+            <div style="display:flex; gap:8px; margin-top:8px">
+              <button id="clearCompleted" class="btn">Clear Completed</button>
+              <button id="exportBtn" class="btn">Export JSON</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>How to use</strong>
+          <ol style="color:var(--muted); padding-left:18px">
+            <li>Add tasks with optional date/time.</li>
+            <li>Click ✔ to mark complete. Edit with ✏ and delete with 🗑.</li>
+            <li>Use filters to view Today's or Completed tasks.</li>
+          </ol>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
